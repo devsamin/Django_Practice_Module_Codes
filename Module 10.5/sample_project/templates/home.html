@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><a href=" /">Home</a></h1>
+    <h1><a href="/first_app/about/">About</a></h1>
+    <h1><a href="/first_app/contact/">Contact</a></h1>
+    <h2>This is global home page.</h2>
+    <h2>{{name}}</h2>
+    {% comment %} Join Filter {% endcomment %}
+    <h3>{{ name | join:" - " }}</h3>
+    {% comment %} Date Filter {% endcomment %}
+    <h3>{{ Current_date | date:"D d M Y" }}</h3>
+    {% comment %} Add Filter {% endcomment %}
+    <h3>{{ 5 | add:"5" }}</h3>
+    {% comment %} Capfirst Filter {% endcomment %}
+    <h3>{{'christmas' | capfirst}}</h3>
+    {% comment %} Cut Filter {% endcomment %}
+    <h3>{{"Python is Fun" | cut:" "}}</h3>
+    {% comment %} First Last Filters {% endcomment %}
+    <h3>{{name | last}}</h3>
+    {% comment %} Length Filter {% endcomment %}
+    <h3>{{ name | length }}</h3>
+    {% comment %} Linenumbers Filter {% endcomment %}
+    <h3>{{ animals | linenumbers }}</h3>
+    {% comment %} Lower Filter {% endcomment %}
+    <h3>{{ text | lower }}</h3>
+    {% comment %} Upper Filter {% endcomment %}
+    <h3>{{ text | upper }}</h3>
+    {% comment %} Title Filter {% endcomment %}
+    <h3>{{ text | title }}</h3>
+    {% comment %} Slice Filter {% endcomment %}
+    <h3>{{ name | slice:":2" }}</h3>
+    {% comment %} Truncatechars Filter {% endcomment %}
+    <h3>{{ text | truncatechars:7 }}</h3>
+    {% comment %} Wordcount Filter {% endcomment %}
+    <h3>{{'Happy coding' | wordcount}}</h3>
+    {% comment %} Make_list Filter {% endcomment %}
+    <h3>{{'ABCDEF' | make_list}}</h3>
+  </body>
+</html>
