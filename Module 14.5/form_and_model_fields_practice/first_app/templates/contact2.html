@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}  
+{% if data %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">email</th>
+      <th scope="col">date</th>
+      <th scope="col">value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for st in data %}
+    <tr>
+      <td>{{st.name}}</td>
+      <td>{{st.email}}</td>
+      <td>{{st.date_time}}</td>
+      <td>{{st.decimal_field}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endif %}
+{% endblock content %}
