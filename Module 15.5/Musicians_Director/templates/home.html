@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>HOME PAGE</h3>
+<div style="width: 50%; margin: auto; m-5">
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Musician Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Instrument Type</th>
+        <th scope="col">Album Name</th>
+        <th scope="col">Release Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in Adata %}
+      <tr>
+        <td><a href="{% url "editmusician" i.Musician.Phone_Number%}"> {{i.Musician.First_Name}} {{i.Musician.Last_Name}}</a></td>
+        <td>{{i.Musician.Email}}</td>
+        <td>{{i.Musician.Instrument_Type}}</td>
+        <td>{{i.Album_Name}}</td>
+        <td>{{i.Release_Date}}</td>
+        <td>
+        <a href="{% url "editalbum" i.id%}" class="btn btn-warning">Edit</a>
+        <a href="{% url "delalbum" i.id%}" class="btn btn-primary ">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
